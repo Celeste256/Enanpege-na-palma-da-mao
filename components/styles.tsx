@@ -147,14 +147,14 @@ ${(props)=> props.google == true && `
 export const MsgBox = styled.Text`
 text-align: center;
 font-size: 13px;
-`
+`;
 
 export const Line = styled.View`
 height: 1px;
 width: 100%;
 background-color: ${darkLight};
 margin-vertical: 10px;
-
+;
 `
 
 export const ExtraView = styled.View`
@@ -169,15 +169,15 @@ export const ExtraText = styled.Text`
     align-content: center;
     color: ${tertiary};
     font-size: 15px;
-`
+`;
 export const TextLink = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const TextLinkContent = styled.Text`
     color: ${brand};
     font-size: 15px;
-`
+`;
 
 

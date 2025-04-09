@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Formik } from 'formik';
 import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons'
-import { View } from 'react-native';
 
 import {
     StyledContainer,
@@ -30,21 +29,17 @@ import {
     Avatar
 } from './../components/styles'
 
-const {brand, darkLight, primary} = Colors;
-
 const Welcome = () => {
-    const [hidePassword, setHidePassword] = useState(true);
 
     return ( 
         <>
-            <StatusBar style="dark"/>
+            <StatusBar style="light"/>
             <InnerContainer>
-                <PageTitle>Enanpege</PageTitle>
-                <SubTitle>Login</SubTitle>
-
                 <WelcomeContainer>
+                    <PageTitle welcome={true}>Bem vindo!</PageTitle>
+                    <SubTitle>Login</SubTitle>
                     <StyledFormArea>
-                    <Avatar resizeMode="cover" source={require('./../assets/img/logo1.png')}/>
+                        <Avatar resizeMode="cover" source={require('../assets/img/img1.jpeg')}/>
                         <Line/>
                         <StyledButton onPress={()=>{}}>
                             <ButtonText>
@@ -56,25 +51,6 @@ const Welcome = () => {
             </InnerContainer>
         </>
     );
-}
-
-
-// minuto 25:06 do video
-const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ...props}) => {
-    return(
-        <View>
-            <LeftIcon>
-                <Octicons name={icon} size={30} color={brand}/>
-            </LeftIcon>
-            <StyledInputLabel>{label}</StyledInputLabel>
-            <StyledTextInput {...props} />
-            {isPassword && (
-                <RightIcon onPress={() => setHidePassword(!hidePassword)}>
-                    <Ionicons name={hidePassword ? 'eye-off' : 'eye'} size={30} color={darkLight}/>
-                </RightIcon>
-            )}
-        </View>
-    )
 }
 
 export default Welcome;
