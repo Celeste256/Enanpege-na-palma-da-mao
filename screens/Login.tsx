@@ -27,12 +27,16 @@ import {
     TextLinkContent
 } from './../components/styles'
 
+import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
+
 const {brand, darkLight, primary} = Colors;
 
-const Login = () => {
+
+const Login = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true);
 
-    return ( 
+    return (
+        <KeyboardAvoidingWrapper>
         <StyledContainer>
             <StatusBar style="dark"/>
             <InnerContainer>
@@ -44,6 +48,7 @@ const Login = () => {
                     initialValues={{email: '', password: ''}}
                     onSubmit={(values) => {
                         console.log(values);
+                        navigation.navigate("Welcome");
                     }}   
                 >{({handleChange, handleBlur, handleSubmit, values}) => (
                     <StyledFormArea>
@@ -85,7 +90,7 @@ const Login = () => {
                         </StyledButton>
                         <ExtraView>
                             <ExtraText>Ainda não tem uma conta?</ExtraText>
-                            <TextLink>
+                            <TextLink onPress={() => navigation.navigate("Signup")}>
                                 <TextLinkContent> Inscreva-se</TextLinkContent>
                             </TextLink>
                         </ExtraView>
@@ -95,6 +100,7 @@ const Login = () => {
                  </Formik>
             </InnerContainer>
         </StyledContainer>
+        </KeyboardAvoidingWrapper>
     );
 }
 
