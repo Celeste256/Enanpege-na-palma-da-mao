@@ -1,28 +1,67 @@
 import React, {useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Button, TouchOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity,Linking, Alert } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { styles } from './styles';
 
 
 export default function LocationScreen() {
     const [location, setLocation] = useState<Location.LocationObjectCoords | null>(null);
 
-    const pontosInteresse = [
-        { id: 1, nome: 'Auditório Principal', latitute:: -16.5875, longitude: -23.0009 },
-        { id: 2, nome: 'Sala 01', latitute: -40.6000, longitude: -46.5678 },
-        { id: 3, nome: 'Estande Tech', latitude: -23.5633, longitude: -46.6542 },
-    ];
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Localização do Evento</Text>
+
+        <MapView
+            style={styles.map}
+            initialRegion={{
+                latitude: -23.55052,
+                longitude: -46.633308,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01,
+            }}
+        >
+            <Marker
+            coordinate={{ latitude: -23.55052, longitude: -46.633308 }}
+            title="Auditório Principal"
+            description="Palestras e Apresentações"
+            />
+
+            {location && (
+                <Marker
+                coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+                title="Você está bem aqui"
+                pinColor="blue"
+                />
+            )}
+
+        </MapView>
+
+        <TouchableOpacity
+         style={styles.button}
+         onPress={() => {
+            const url ='https://www.google.com/maps/dir/?api=1&destination=-23.55052,-46.633308';
+            Linking.openURL(url);
+         }}
+         >
+            <Text style={styles.buttonText}>Como chegar</Text>
+         </TouchableOpacity>
+
+        </View>
+    );
 }
 
 useEffect(() => {
     (async () => {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') return;
-        let location = await Location.getCurrentPositionAsync({});
-        setLocation(location.coords); 
+        const { status } = await Location.requestForegroundPermissionsAsync();
+
+        if (status !== 'granted') {
+            Alert.alert('Permissão necessária', 'Ative a localização para ver sua posição no mapa.');
+            return;
+        }
+
+        const currentLocation = await Location.getCurrentPositionAsync({});
+        setLocation(currentLocation.coords);
     })();
 }, []);
 
-return(
-    <View style></View>
-)
