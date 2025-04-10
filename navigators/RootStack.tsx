@@ -25,8 +25,9 @@ const RootStack = () => {
             }}
             initialRouteName="Login"
             >
-                <Stack.Screen name="Login" component={Login}/>
-                <Stack.Screen name="Signup" component={SignUp}/>
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="Signup" component={SignUp} />
+                {/* <Stack.Screen name="Location" component={Location} /> */}
                 <Stack.Screen options={{headerTintColor: primary}} name="Welcome" component={Welcome}/>
             </Stack.Navigator>
         </NavigationContainer>

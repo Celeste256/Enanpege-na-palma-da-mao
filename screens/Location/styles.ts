@@ -1,34 +1,34 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
-    paddingHorizontal: 20,
+    paddingTop: 40,
+    paddingHorizontal: 16,
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 15,
-    textAlign: 'center',
-    color: '#7B2CBF',
+    marginBottom: 16,
   },
   map: {
     width: '100%',
-    height: 400,
-    borderRadius: 10,
+    height: height * 0.6,
+    borderRadius: 12,
   },
   button: {
     marginTop: 20,
-    backgroundColor: '#7B2CBF',
-    paddingVertical: 12,
-    borderRadius: 8,
+    backgroundColor: '#005eff',
+    padding: 14,
+    borderRadius: 10,
     alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontWeight: '600',
+    fontWeight: 'bold',
     fontSize: 16,
   },
 });
