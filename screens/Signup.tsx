@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Formik } from 'formik';
 import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons'
 import { View } from 'react-native';
-
+import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 import {
     StyledContainer,
     InnerContainer,
@@ -29,10 +29,11 @@ import {
 
 const {brand, darkLight, primary} = Colors;
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true);
 
     return ( 
+        <KeyboardAvoidingWrapper>
         <StyledContainer>
             <StatusBar style="dark"/>
             <InnerContainer>
@@ -43,6 +44,7 @@ const SignUp = () => {
                     initialValues={{fullName: '', email: '', password: '', confirmPassword: ''}}
                     onSubmit={(values) => {
                         console.log(values);
+                        navigation.navigate('Welcome')
                     }}   
                 >{({handleChange, handleBlur, handleSubmit, values}) => (
                     <StyledFormArea>
@@ -95,13 +97,13 @@ const SignUp = () => {
                         <MsgBox>...</MsgBox>
                         <StyledButton onPress={handleSubmit}>
                             <ButtonText>
-                                Login
+                                Inscrever-se
                             </ButtonText>
                         </StyledButton>
                         <Line/>
                         <ExtraView>
                             <ExtraText>Já tem uma conta?</ExtraText>
-                            <TextLink>
+                            <TextLink onPress={() => navigation.navigate('Login')}>
                                 <TextLinkContent> Realizar login</TextLinkContent>
                             </TextLink>
                         </ExtraView>
@@ -111,6 +113,7 @@ const SignUp = () => {
                  </Formik>
             </InnerContainer>
         </StyledContainer>
+        </KeyboardAvoidingWrapper>
     );
 }
 

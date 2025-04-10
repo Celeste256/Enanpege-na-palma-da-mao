@@ -29,7 +29,7 @@ import {
     Avatar
 } from './../components/styles'
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
 
     return ( 
         <>
@@ -41,7 +41,7 @@ const Welcome = () => {
                     <StyledFormArea>
                         <Avatar resizeMode="cover" source={require('../assets/img/img1.jpeg')}/>
                         <Line/>
-                        <StyledButton onPress={()=>{}}>
+                        <StyledButton onPress={()=>{navigation.navigate('Login')}}>
                             <ButtonText>
                                 Desconectar conta
                             </ButtonText>
