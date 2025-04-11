@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'android' ? 40 : 60,
     paddingHorizontal: 16,
+    alignItems: 'center',
     backgroundColor: '#fff',
   },
   title: {
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
-    elevation: 3, // para Android
+    elevation: 3,
   },
   buttonText: {
     color: '#fff',
