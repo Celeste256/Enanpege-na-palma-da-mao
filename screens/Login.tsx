@@ -46,7 +46,7 @@ const Login = ({ navigation }) => {
                         initialValues={{ email: '', password: '' }}
                         onSubmit={(values) => {
                             console.log(values);
-                            navigation.navigate('Welcome');
+                            navigation.navigate('Main');
                         }}
                     >
                         {({ handleChange, handleBlur, handleSubmit, values }) => (
@@ -123,5 +123,6 @@ const MyTextInput = ({ label, icon, isPassword, hidePassword, setHidePassword, .
         </View>
     );
 };
+
 
 export default Login;

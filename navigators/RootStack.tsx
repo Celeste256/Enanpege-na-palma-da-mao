@@ -1,40 +1,43 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Colors } from '../components/styles';
+import Tabs from './Tabs';
 import React from "react";
 import Login from '../screens/Login'
 import SignUp from '../screens/Signup'
 import Welcome from '../screens/Welcome';
-import { Colors } from '../components/styles';
 import LocationScreen from '../screens/Location/index';
 
 
-
 const Stack = createStackNavigator();
+
 const { primary, tertiary } = Colors;
 const RootStack = () => {
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                screenOptions={{
-                    headerStyled: {
-                        backgroundColor: "transparent"
-                    },
-                    headerTintColor: tertiary,
-                    headerTransparent: true,
-                    headerTitle: '',
-                    headerLeftContainerStyle: {
-                        paddingLeft: 20
-                    }
-                }}
-                initialRouteName="Location"
-            >
-                <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name="Signup" component={SignUp} />
-                <Stack.Screen name="Location" component={LocationScreen} />
-                <Stack.Screen options={{ headerTintColor: primary }} name="Welcome" component={Welcome} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: 'transparent',
+                },
+                headerTintColor: tertiary,
+                headerTransparent: true,
+                headerTitle: '',
+                headerLeftContainerStyle: {
+                    paddingLeft: 20,
+                },
+            }}
+            initialRouteName="Login"
+        >
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="SignUp" component={SignUp} />
+            <Stack.Screen name="Location" component={LocationScreen} />
+            <Stack.Screen
+                name="Main"
+                component={Tabs}
+                options={{ headerTintColor: primary }}
+            />
+        </Stack.Navigator>
     );
-}
+};
 
 export default RootStack;
