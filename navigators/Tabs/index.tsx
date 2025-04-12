@@ -4,6 +4,7 @@ import Welcome from '../../screens/Welcome';
 import Location from '../../screens/Location';
 import { Ionicons } from '@expo/vector-icons';
 import { tabStyles } from './styles';
+import SignUp from '../../screens/Signup';
 
 const Tab = createBottomTabNavigator();
 

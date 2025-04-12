@@ -44,7 +44,7 @@ const SignUp = ({navigation}) => {
                     initialValues={{fullName: '', email: '', password: '', confirmPassword: ''}}
                     onSubmit={(values) => {
                         console.log(values);
-                        navigation.navigate('Welcome')
+                        navigation.navigate('Main')
                     }}   
                 >{({handleChange, handleBlur, handleSubmit, values}) => (
                     <StyledFormArea>
