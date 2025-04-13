@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: height * 0.55,
+    height: 1200 * 0.55,
     borderRadius: 12,
     overflow: 'hidden',
   },
