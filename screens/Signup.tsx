@@ -37,8 +37,7 @@ const SignUp = ({navigation}) => {
         <StyledContainer>
             <StatusBar style="dark"/>
             <InnerContainer>
-                <PageTitle>Enanpege</PageTitle>
-                <SubTitle>Fazer login</SubTitle>
+                <PageTitle>Cadastro</PageTitle>
 
                 <Formik
                     initialValues={{fullName: '', email: '', password: '', confirmPassword: ''}}

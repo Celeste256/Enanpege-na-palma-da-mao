@@ -1,9 +1,10 @@
 import React from 'react';
+import {StyleSheet, View} from 'react-native'
 
 //screens
 import Login from './screens/Login';
 import SignUp from './screens/Signup';
-import Welcome from './screens/Welcome';
+import Perfil from './screens/Perfil';
 import Location from './screens/Location/index';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -16,5 +17,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
 

@@ -5,8 +5,13 @@ import Tabs from './Tabs';
 import React from "react";
 import Login from '../screens/Login'
 import SignUp from '../screens/Signup'
-import Welcome from '../screens/Welcome';
+import Perfil from '../screens/Perfil';
+import Destaques from '../screens/Destaques';
 import LocationScreen from '../screens/Location/index';
+import Faq from "../screens/Faq";
+import Agenda from "../screens/Agenda";
+import Palestrantes from "../screens/Palestrantes";
+import Noticias from "../screens/Noticias";
 
 
 const Stack = createStackNavigator();
@@ -31,7 +36,12 @@ const RootStack = () => {
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Signup" component={SignUp} />
             <Stack.Screen name="Location" component={LocationScreen} />
-            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Perfil" component={Perfil} />
+            <Stack.Screen name="Faq" component={Faq} />
+            <Stack.Screen name="Agenda" component={Agenda} />
+            <Stack.Screen name="Palestrantes" component={Palestrantes} />
+            <Stack.Screen name="Noticias" component={Noticias} />
+            <Stack.Screen name="Destaques" component={Destaques} />
             <Stack.Screen
                 name="Main"
                 component={Tabs}

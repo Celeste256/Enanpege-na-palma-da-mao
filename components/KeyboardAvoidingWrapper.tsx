@@ -4,8 +4,8 @@ import { KeyboardAvoidingView, ScrollView, TouchableWithoutFeedback, Keyboard } 
 
 const KeyboardAvoidingWrapper = ({children}) => {
     return(
-        <KeyboardAvoidingView style={{flex: 1}}>
-            <ScrollView>
+        <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#fff'}}>
+            <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     {children}
                 </TouchableWithoutFeedback>

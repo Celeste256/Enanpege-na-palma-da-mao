@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '700',
     marginBottom: 16,
-    color: '#333',
+    color: '#5470f5',
   },
   map: {
     width: '100%',
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
-    backgroundColor: '#6D28D9',
+    backgroundColor: '#5470f5',
     paddingVertical: 14,
     paddingHorizontal: 24,
     borderRadius: 10,

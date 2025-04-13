@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Formik } from 'formik';
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
@@ -28,7 +28,7 @@ import {
 
 import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
 
-const { brand, darkLight, primary } = Colors;
+const { brand, darkLight, primary, red } = Colors;
 
 const Login = ({ navigation }) => {
     const [hidePassword, setHidePassword] = useState(true);
@@ -39,7 +39,7 @@ const Login = ({ navigation }) => {
                 <StatusBar style="dark" />
                 <InnerContainer>
                     <PageLogo resizeMode="cover" source={require('./../assets/img/logo1.png')} />
-                    <PageTitle>Enanpege</PageTitle>
+                    <PageTitle login={true}>Enanpege na Palma da Mão</PageTitle>
                     <SubTitle>Login</SubTitle>
 
                     <Formik

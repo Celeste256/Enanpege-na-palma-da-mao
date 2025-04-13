@@ -24,22 +24,22 @@ import {
     ExtraView,
     TextLink,
     TextLinkContent,
-    WelcomeContainer,
+    PerfilContainer,
     WelcomeImage,
     Avatar
-} from './../components/styles'
+} from '../components/styles'
 
-const Welcome = ({navigation}) => {
+const Perfil = ({navigation}) => {
 
     return ( 
         <>
             <StatusBar style="light"/>
-            <InnerContainer>
-                <WelcomeContainer>
-                    <PageTitle welcome={true}>Bem vindo!</PageTitle>
-                    <SubTitle>Login</SubTitle>
+            <InnerContainer style={{backgroundColor: '#fff'}}>
+                <PerfilContainer>
+                    <PageTitle perfil={true}>Perfil</PageTitle>
+                    <SubTitle>Nome da conta</SubTitle>
                     <StyledFormArea>
-                        <Avatar resizeMode="cover" source={require('../assets/img/img1.jpeg')}/>
+                        <Avatar resizeMode="cover" source={require('../assets/img/logo1.png')}/>
                         <Line/>
                         <StyledButton onPress={()=>{navigation.navigate('Login')}}>
                             <ButtonText>
@@ -47,10 +47,10 @@ const Welcome = ({navigation}) => {
                             </ButtonText>
                         </StyledButton>
                     </StyledFormArea>
-                </WelcomeContainer>
+                </PerfilContainer>
             </InnerContainer>
         </>
     );
 }
 
-export default Welcome;
+export default Perfil;

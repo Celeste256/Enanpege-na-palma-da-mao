@@ -9,7 +9,7 @@ export const Colors = {
     secondary: '#E5E7EB',
     tertiary: '#1F2937',
     darkLight: '#9CA3AF',
-    brand: '#6D28D9',
+    brand: '#5470f5',
     green: '#10B981',
     red: '#EF4444'
 };
@@ -20,16 +20,17 @@ export const StyledContainer = styled.View
 `
     flex: 1;
     padding: 25px;
-    padding-top: ${StatusBarHeight +30}px;
+    padding-top: ${StatusBarHeight +40}px;
     background-color: ${primary};
 `
 export const InnerContainer = styled.View`
 flex: 1;
 width: 100%;
 align-items: center;
+
 `;
 
-export const WelcomeContainer = styled(InnerContainer)`
+export const PerfilContainer = styled(InnerContainer)`
 padding: 25px;
 padding-top: 10px;
 justify-content: center;
@@ -63,8 +64,12 @@ text-align: center;
 font-weight: bold;
 color: ${brand};
 padding: 10px;
+${(props) => props.login && `
+    font-size: 25px;
+    `}
 
-${(props) => props.welcome && `
+
+${(props) => props.perfil && `
     font-size: 35px;
     `}
 `;
@@ -128,7 +133,7 @@ margin-vertical: 5px;
 height: 60px;
 
 ${(props)=> props.google == true && `
-    background-color: ${green};
+    background-color: ${tertiary};
     flex-direction: row;
     justify-content: center;
     `}
