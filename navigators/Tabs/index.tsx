@@ -13,13 +13,19 @@ import Perfil from '../../screens/Perfil';
 const { width: windowWidth } = Dimensions.get('window');
 const iconWidth = windowWidth / 4;
 
-const routes = [
-  { key: 'destaques', icon: 'home', component: <Destaques /> },
-  { key: 'noticias', icon: 'newspaper', component: <Noticias /> },
-  { key: 'agenda', icon: 'calendar', component: <Agenda /> },
+type Route = {
+  key: string;
+  icon: React.ComponentProps<typeof Ionicons>['name'];
+  component: JSX.Element;
+};
+
+const routes: Route[] = [
+  { key: 'destaques', icon: 'home', component: <Destaques navigation={undefined} /> },
+  { key: 'noticias', icon: 'newspaper', component: <Noticias navigation={undefined} /> },
+  { key: 'agenda', icon: 'calendar', component: <Agenda navigation={undefined} /> },
   { key: 'localizacao', icon: 'map', component: <Location /> },
-  { key: 'palestrantes', icon: 'people', component: <Palestrantes /> },
-  { key: 'faq', icon: 'help-circle', component: <Faq /> },
+  { key: 'palestrantes', icon: 'people', component: <Palestrantes navigation={undefined} /> },
+  { key: 'faq', icon: 'help-circle', component: <Faq navigation={undefined} /> },
   { key: 'perfil', icon: 'person', component: <Perfil /> },
 ];
 
