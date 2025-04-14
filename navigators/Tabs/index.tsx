@@ -13,13 +13,7 @@ import Perfil from '../../screens/Perfil';
 const { width: windowWidth } = Dimensions.get('window');
 const iconWidth = windowWidth / 4;
 
-type Route = {
-  key: string;
-  icon: React.ComponentProps<typeof Ionicons>['name'];
-  component: JSX.Element;
-};
-
-const routes: Route[] = [
+const routes = [
   { key: 'destaques', icon: 'home', component: <Destaques navigation={undefined} /> },
   { key: 'noticias', icon: 'newspaper', component: <Noticias navigation={undefined} /> },
   { key: 'agenda', icon: 'calendar', component: <Agenda navigation={undefined} /> },
